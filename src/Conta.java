@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Conta implements ContaOperations{
+public abstract class Conta implements ContaOperations{
 
     private static Integer ID = 1;
 
@@ -37,7 +37,7 @@ public class Conta implements ContaOperations{
             throw new RuntimeException("Nao é permitido valores negativos!");
         } else {
             setSaldo(getSaldo()-valor);
-            conta.setSaldo(getSaldo()+valor);
+            conta.setSaldo(conta.getSaldo()+valor);
             System.out.println("Transferencia feita com sucesso");
         }
     }
